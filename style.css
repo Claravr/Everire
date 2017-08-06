@@ -1,0 +1,48 @@
+input[type=text] {
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+
+    width: 50px;
+    float: left;
+    text-align: center;
+font-style: oblique;
+}
+div {
+    display: inline-block;
+    width: auto;
+font-style: oblique;
+padding: 25px;
+margin: 25px;
+background-color: white;
+border-style: solid;
+border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
+-webkit-border-image: url("border.png")30 repeat;;
+-o-border-image: url("border.png") 30 repeat;
+border-image: url("border.png")30 repeat;
+}
+
+div label {
+    display: block;
+    float: center;
+
+}
+
+.headline {
+  padding: 25px;
+  margin: 25px;
+  background-color: white;
+border-style: solid;
+border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
+-webkit-border-image: url("border.png")30 repeat;;
+-o-border-image: url("border.png") 30 repeat;
+border-image: url("border.png") 30 repeat;
+font-style: oblique;
+}
+body{background-image: url("bg.png");}
+.plusgrayout{
+
+}
+.minusgrayout{
+
+}

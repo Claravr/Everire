@@ -47,7 +47,9 @@ function finalsBonusPoints() {
 
 }
 
-
+if (stats.bonusPoints = 0) {
+  document.getElementById("points").style.color = "green";
+}
 
 
 function bonusPointsCosts() {
@@ -642,4 +644,162 @@ function bonusPointsCharismaCosts() {
 
 
 
+var generatedSheet = "";
+
+function createSheet() {
+
+
+  //Vars
+  var fullname = document.getElementById("fullname").value;
+  var gender = document.getElementById("gender").value;
+
+
+  var sheetSelectedArchtype = document.getElementById("Archtype");
+  var sheetArchtype = sheetSelectedArchtype.options[sheetSelectedArchtype.selectedIndex].value;
+
+  var sheetSelectedElementalAffinity = document.getElementById("ElementalAffinity");
+  var sheetElementalAffinity = sheetSelectedElementalAffinity.options[sheetSelectedElementalAffinity.selectedIndex].value;
+
+  var starterWeapon = "";
+  var starterArmor = "";
+
+  var healthpoints = stats.Endurance;
+  var mana = stats.Magic;
+
+  var attackRoll = "";
+
+  var magicDefense = 0;
+
+
+
+
+
+  var amd = 0;
+  var apd = 0;
+  var pysicalDefense = 0;
+
+  if (sheetArchtype === "Melee") {
+    document.getElementById("primayStats").value = "Endurance, Strength";
+    document.getElementById("secondaryStats").value = "Agility";
+    stats.Endurance++;
+    stats.Strength++;
+    attackRoll = "Roll 1d20 + STR";
+    starterWeapon = "(SW) Rusted Broadsword | 1d4 damage";
+    starterArmor = "(HA) Rusted Chainmail (Max AGI 4)| APD: 6 | AMD: 3 | 2 Slots";
+
+    var fakestat1 = stats.Endurance;
+    var fakestat2 = stats.Strength;
+    var fakestat3 = stats.Mind;
+    var fakestat4 = stats.Magic;
+    pysicalDefense=  fakestat1 / 2 + fakestat2 / 2 + 6;
+    Math.round(pysicalDefense);
+    magicDefense = fakestat3 / 2 + fakestat4 / 2 + 3;
+    Math.round(magicDefense);
+
+  }
+  if (sheetArchtype === "Ranged" || "Rogue") {
+    document.getElementById("primayStats").value = "Agility, Strength";
+    document.getElementById("secondaryStats").value = "Endurance";
+    stats.Strength++;
+    stats.Agility++;
+    attackRoll = "Roll 1d20 + AGI";
+    starterWeapon = "(AW) Blunt Dagger | 1d2 damage";
+    starterArmor = "(LA) Tattered Jerkin | APD: 3 | AMD: 2 | 3 Slots";
+    var fakestat1 = stats.Endurance;
+    var fakestat2 = stats.Agility;
+    var fakestat3 = stats.Mind;
+    var fakestat4 = stats.Magic;
+    pysicalDefense=  fakestat1 / 2 + fakestat2 / 2 + 3;
+    Math.round(pysicalDefense);
+    magicDefense = fakestat3 / 2 + fakestat4 / 2 + 2;
+    Math.round(magicDefense);
+  }
+  if (sheetArchtype === "Caster") {
+    document.getElementById("primayStats").value = "Magic, Mind";
+    document.getElementById("secondaryStats").value = "Charisma";
+    stats.Mind++;
+    stats.Magic++;
+    starterWeapon = "(AW) Cracked Wand | 1d2 damage | Channel Cost: 1 Mana - 1d3 damage";
+    starterArmor = "(CA) Ragged Robe | APD: 1 | AMD: 4 | 2 Slots";
+    attackRoll = "Roll 1d20 + MND";
+    var fakestat1 = stats.Endurance;
+    var fakestat2 = stats.Agility;
+    var fakestat3 = stats.Mind;
+    var fakestat4 = stats.Magic;
+    pysicalDefense=  fakestat1 / 2 + fakestat2 / 2 +1;
+    Math.round(pysicalDefense);
+    magicDefense = fakestat3 / 2 + fakestat4 / 2 + 4;
+    Math.round(magicDefense);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  generatedSheet = "Name: " + fullname + "\r\nGender: " + gender + "\r\nArchetype: " + sheetArchtype + "\r\nElemental Affinity: " + sheetElementalAffinity + "\r\n\r\n" +
+    "Class Level (CL): 1" + "\r\nExperience (EXP): 0/0" + "\r\n\r\n" + "Endurance (END): " + stats.Endurance + "\r\nStrength (STR):  " + stats.Strength + "\r\nAgility (AGI):  " + stats.Agility +
+    "\r\nMind (MND):  " + stats.Mind + "\r\nMagic (MAG):  " + stats.Magic + "\r\nCharisma (CHA):  " + stats.Charisma + "\r\n\r\n" + "Health Points (HP): " + healthpoints + "\r\n\r\nMana: " + mana + "\r\nPhysical Defense (PD): " + pysicalDefense + "\r\nMagic Defense (MD): " + magicDefense + "\r\n\r\nEquipped Armor: "
+     + starterArmor + "\r\nEquipped Weapon: " + starterWeapon + "\r\n\r\n" + "Attack Roll:" + attackRoll + "\r\nEquipped Items: " + "\r\n\r\n" +"Abilities: "+ "\r\nPassives: "+ "\r\n" + "\r\n\r\n" + "Skills: "+"\r\n\r\n" + "Professions: " + "\r\nGathering Skills: " 
+     + "\r\n\r\n" + "Possessions: " + "\r\nGold: 0"+ "\r\n\r\n" + "Log: ";
+
+
+}
+(function() {
+  createSheet();
+
+  var textFile = null,
+    makeTextFile = function(text) {
+      var data = new Blob([text], {
+        type: 'text/plain'
+      });
+
+      // If we are replacing a previously generated file we need to
+      // manually revoke the object URL to avoid memory leaks.
+      if (textFile !== null) {
+        window.URL.revokeObjectURL(textFile);
+      }
+
+      textFile = window.URL.createObjectURL(data);
+
+      return textFile;
+    };
+
+
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+
+  create.addEventListener('click', function() {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(generatedSheet);
+    link.style.display = 'block';
+  }, false);
+})();
+
+
+/*  function calcD(arg1,arg2,arg3) {
+    var stepone = arg1/2;
+    console.log(stepone);
+    Math.round(stepone)
+    console.log(stepone);
+    var steptwo = arg2/2;
+    console.log(steptwo);
+    Math.round(steptwo)
+    console.log(steptwo);
+    pysicalDefense = arg3 + stepone + steptwo;
+    console.log(pysicalDefense);
+  } */
 ////////////TEST//////////////////////////////////////

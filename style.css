@@ -1,4 +1,4 @@
-input[type=text] {
+.stats input[type=text] {
     background-color: white;
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -20,6 +20,7 @@ border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
 -webkit-border-image: url("border.png")30 repeat;;
 -o-border-image: url("border.png") 30 repeat;
 border-image: url("border.png")30 repeat;
+position:relative;
 }
 
 .stats label {
@@ -40,21 +41,72 @@ border-image: url("border.png") 30 repeat;
 font-style: oblique;
 }
 body{background-image: url("bg.png");}
-.plusgrayout{
 
-}
-.minusgrayout{
-
-}
 .info {
   display: inline-block;
   width: auto;
   padding: 15px;
   margin: 25px;
+
   background-color: white;
   border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
   -webkit-border-image: url("border.png")30 repeat;;
   -o-border-image: url("border.png") 30 repeat;
   border-image: url("border.png") 30 repeat;
   border-style: solid;
+}
+
+.basics {
+
+  width: auto;
+
+  padding: 15px;
+  margin: 20px;
+  background-color: white;
+  border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
+  -webkit-border-image: url("border.png")30 repeat;;
+  -o-border-image: url("border.png") 30 repeat;
+  border-image: url("border.png") 30 repeat;
+  border-style: solid;
+
+}
+
+.basics input[type=text]{
+width: auto;
+margin: 20px;
+overflow: hidden;
+}
+
+.basics select {
+margin: 20px;
+  background: transparent;
+  width: auto;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  #overflow: hidden;
+}
+.finish{
+  text-decoration: none;
+  text-align: center;
+}
+a.nav-link:link
+{
+   color: #fb3f00;
+   text-decoration: none;
+}
+a.nav-link:visited
+{
+
+   text-decoration: none;
+}
+a.nav-link:hover
+{
+   color: #fb3f00;
+   text-decoration: none;
+}
+a.nav-link:active
+{
+   color: #fb3f00;
+   text-decoration: none;
 }

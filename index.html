@@ -21,58 +21,94 @@
 
   <div class="info">
     <h1>Disclaimer:</h1>
-    <p>You can only increase or decrease a stat. If you did a mistake please reload the page! You need to have 0 Bonus Points for the sheet to be correct!</p>
+    <p>If it looks fishy please reload the page! You need to have 0 Bonus Points for the sheet to be correct! Please fill out the stats before the rest. Trickster is still WIP.</p>
+
+
 
   </div>
-
   <div>
     <p class="info" id="points"></p>
+
+    <div class="stats">
+      <label>Endurance:</label>
+      <input type="text" id="endurance">
+      <button onclick="plusstatsEndurance()">+</button>
+      <button onclick="minusstatsEndurance()">-</button>
+    </div>
+
+    <div class="stats">
+      <label>Strength:</label>
+      <input type="text" id="strength">
+      <button onclick="plusstatsStrength()">+</button>
+      <button onclick="minusstatsStrength()">-</button>
+    </div>
+
+    <div class="stats">
+      <label>Agilility:</label>
+      <input type="text" id="agilility">
+      <button onclick="plusstatsAgility()">+</button>
+      <button onclick="minusstatsAgility()">-</button>
+    </div>
+
+    <div class="stats">
+      <label>Magic:</label>
+      <input type="text" id="magic">
+      <button onclick="plusstatsMagic()">+</button>
+      <button onclick="minusstatsMagic()">-</button>
+    </div>
+
+    <div class="stats">
+      <label>Mind:</label>
+      <input type="text" id="mind">
+      <button onclick="plusstatsMind()">+</button>
+      <button onclick="minusstatsMind()">-</button>
+    </div>
+
+    <div class="stats">
+      <label>Charisma:</label>
+      <input type="text" id="charisma">
+      <button onclick="plusstatsCharisma()">+</button>
+      <button onclick="minusstatsCharisma()">-</button>
+    </div>
   </div>
 
+    <div class="basics">
 
-  <div class="stats">
-    <label>Endurance:</label>
-    <input type="text" id="endurance">
-    <button onclick="plusstatsEndurance()">+</button>
-    <button onclick="minusstatsEndurance()">-</button>
+      <label>Full Name:</label>
+      <input type="text" id="fullname">
+
+
+      <label>Gender:</label>
+      <input type="text" id="gender">
+
+
+
+
+      <label>Archetype:</label>
+      <select id="Archtype">
+     <option>Melee</option>
+     <option>Rogue</option>
+      <option>Ranged</option>
+     <option>Caster</option>
+      </select>
+
+      <label>Elemental Affinity:</label>
+      <select id="ElementalAffinity">
+       <option>Light</option>
+       <option>Shadow</option>
+       <option>Earth</option>
+       <option>Lightning</option>
+       <option>Water</option>
+       <option>Fire</option>
+        </select>
+
+        <label>Primary Stats:</label>
+        <input type="text" id="primayStats">
+        <label>Secondary Stat:</label>
+        <input type="text" id="secondaryStats">
+
+        <button onclick="createSheet()"id="create">Create Character Sheet</button> <a class="finish" download="YourCharacterSheet.txt" id="downloadlink" style="display: none">Download</a>
   </div>
-
-  <div class="stats">
-    <label>Strength:</label>
-    <input type="text" id="strength">
-    <button onclick="plusstatsStrength()">+</button>
-    <button onclick="minusstatsStrength()">-</button>
-  </div>
-
-  <div class="stats">
-    <label>Agilility:</label>
-    <input type="text" id="agilility">
-    <button onclick="plusstatsAgility()">+</button>
-    <button onclick="minusstatsAgility()">-</button>
-  </div>
-
-  <div class="stats">
-    <label>Magic:</label>
-    <input type="text" id="magic">
-    <button onclick="plusstatsMagic()">+</button>
-    <button onclick="minusstatsMagic()">-</button>
-  </div>
-
-  <div class="stats">
-    <label>Mind:</label>
-    <input type="text" id="mind">
-    <button onclick="plusstatsMind()">+</button>
-    <button onclick="minusstatsMind()">-</button>
-  </div>
-
-  <div class="stats">
-    <label>Charisma:</label>
-    <input type="text" id="charisma">
-    <button onclick="plusstatsCharisma()">+</button>
-    <button onclick="minusstatsCharisma()">-</button>
-  </div>
-
-
 
 
 
@@ -81,5 +117,6 @@
 
 </body>
 <script src="calculating.js"></script>
+<script src="basics.js"></script>
 
 </html>

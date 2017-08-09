@@ -8,7 +8,7 @@ input[type=text] {
     text-align: center;
 font-style: oblique;
 }
-div {
+.stats {
     display: inline-block;
     width: auto;
 font-style: oblique;
@@ -22,7 +22,7 @@ border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
 border-image: url("border.png")30 repeat;
 }
 
-div label {
+.stats label {
     display: block;
     float: center;
 
@@ -45,4 +45,16 @@ body{background-image: url("bg.png");}
 }
 .minusgrayout{
 
+}
+.info {
+  display: inline-block;
+  width: auto;
+  padding: 15px;
+  margin: 25px;
+  background-color: white;
+  border-width: 25px; -moz-border-image: url("border.png") 30 repeat;
+  -webkit-border-image: url("border.png")30 repeat;;
+  -o-border-image: url("border.png") 30 repeat;
+  border-image: url("border.png") 30 repeat;
+  border-style: solid;
 }

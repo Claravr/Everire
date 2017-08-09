@@ -18,46 +18,58 @@
 <body>
 
   <h1 class="headline">Everire´s Best Sheet Creator</h1>
-  <h1 class="headline" id="points"></h1>
+
+  <div class="info">
+    <h1>Disclaimer:</h1>
+    <p>You can only increase or decrease a stat. If you did a mistake please reload the page! You need to have 0 Bonus Points for the sheet to be correct!</p>
+
+  </div>
 
   <div>
+    <p class="info" id="points"></p>
+  </div>
+
+
+  <div class="stats">
     <label>Endurance:</label>
     <input type="text" id="endurance">
-    <button class="plusgrayout" class="grayout" id="plusEND" onclick="plusEND()">+</button>
-    <button class="minusgrayout" id="minusEND" onclick="minusEND()">-</button>
+    <button onclick="plusstatsEndurance()">+</button>
+    <button onclick="minusstatsEndurance()">-</button>
   </div>
 
-  <div>
+  <div class="stats">
     <label>Strength:</label>
     <input type="text" id="strength">
-    <button class="grayout" onclick="plusSTR()">+</button>
-    <button class="grayout" onclick="minusSTR()">-</button>
+    <button onclick="plusstatsStrength()">+</button>
+    <button onclick="minusstatsStrength()">-</button>
   </div>
 
-  <div>
+  <div class="stats">
     <label>Agilility:</label>
     <input type="text" id="agilility">
-    <button class="grayout" onclick="plusAGI()">+</button>
-    <button class="grayout" onclick="minusAGI()">-</button>
+    <button onclick="plusstatsAgility()">+</button>
+    <button onclick="minusstatsAgility()">-</button>
   </div>
 
-  <div>
+  <div class="stats">
     <label>Magic:</label>
     <input type="text" id="magic">
-    <button class="grayout" onclick="plusMAG()">+</button>
-    <button class="grayout" onclick="minusMAG()">-</button>
+    <button onclick="plusstatsMagic()">+</button>
+    <button onclick="minusstatsMagic()">-</button>
   </div>
-  <div>
+
+  <div class="stats">
     <label>Mind:</label>
     <input type="text" id="mind">
-    <button class="grayout" onclick="plusMND()">+</button>
-    <button class="grayout" onclick="minusMND()">-</button>
+    <button onclick="plusstatsMind()">+</button>
+    <button onclick="minusstatsMind()">-</button>
   </div>
-  <div>
+
+  <div class="stats">
     <label>Charisma:</label>
     <input type="text" id="charisma">
-    <button class="grayout" onclick="plusCHA()">+</button>
-    <button class="grayout" onclick="minusCHA()">-</button>
+    <button onclick="plusstatsCharisma()">+</button>
+    <button onclick="minusstatsCharisma()">-</button>
   </div>
 
 
@@ -68,6 +80,6 @@
 
 
 </body>
-<script src="core.js"></script>
+<script src="calculating.js"></script>
 
 </html>

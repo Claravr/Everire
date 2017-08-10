@@ -701,7 +701,7 @@ function createSheet() {
     document.getElementById("primayStats").value = "Agility, Strength";
     document.getElementById("secondaryStats").value = "Endurance";
     stats.Strength+= 1;
-    stats.Agility+=;
+    stats.Agility+= 1;
     attackRoll = "Roll 1d20 + AGI";
     starterWeapon = "(AW) Blunt Dagger | 1d2 damage";
     starterArmor = "(LA) Tattered Jerkin | APD: 3 | AMD: 2 | 3 Slots";
@@ -717,8 +717,8 @@ function createSheet() {
   if (sheetArchtype === "Caster") {
     document.getElementById("primayStats").value = "Magic, Mind";
     document.getElementById("secondaryStats").value = "Charisma";
-    stats.Mind+=;
-    stats.Magic+=;
+    stats.Mind+= 1;
+    stats.Magic+= 1;
     starterWeapon = "(AW) Cracked Wand | 1d2 damage | Channel Cost: 1 Mana - 1d3 damage";
     starterArmor = "(CA) Ragged Robe | APD: 1 | AMD: 4 | 2 Slots";
     attackRoll = "Roll 1d20 + MND";

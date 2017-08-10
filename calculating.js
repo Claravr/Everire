@@ -681,8 +681,8 @@ function createSheet() {
   if (sheetArchtype === "Melee") {
     document.getElementById("primayStats").value = "Endurance, Strength";
     document.getElementById("secondaryStats").value = "Agility";
-    stats.Endurance=+ 1;
-    stats.Strength=+ 1;
+    stats.Endurance=stats.Endurance+ 1;
+    stats.Strength=stats.Strength+ 1;
     attackRoll = "Roll 1d20 + STR";
     starterWeapon = "(SW) Rusted Broadsword | 1d4 damage";
     starterArmor = "(HA) Rusted Chainmail (Max AGI 4)| APD: 6 | AMD: 3 | 2 Slots";
@@ -700,8 +700,8 @@ function createSheet() {
   if (sheetArchtype === "Ranged" || "Rogue") {
     document.getElementById("primayStats").value = "Agility, Strength";
     document.getElementById("secondaryStats").value = "Endurance";
-    stats.Strength=+ 1;
-    stats.Agility=+ 1;
+    stats.Strength= stats.Strength+ 1;
+    stats.Agility= stats.Agility + 1;
     attackRoll = "Roll 1d20 + AGI";
     starterWeapon = "(AW) Blunt Dagger | 1d2 damage";
     starterArmor = "(LA) Tattered Jerkin | APD: 3 | AMD: 2 | 3 Slots";
@@ -717,8 +717,8 @@ function createSheet() {
   if (sheetArchtype === "Caster") {
     document.getElementById("primayStats").value = "Magic, Mind";
     document.getElementById("secondaryStats").value = "Charisma";
-    stats.Mind=+  1;
-    stats.Magic=+  1;
+    stats.Mind= stats.Mind+  1;
+    stats.Magic= stats.Magic +  1;
     starterWeapon = "(AW) Cracked Wand | 1d2 damage | Channel Cost: 1 Mana - 1d3 damage";
     starterArmor = "(CA) Ragged Robe | APD: 1 | AMD: 4 | 2 Slots";
     attackRoll = "Roll 1d20 + MND";
